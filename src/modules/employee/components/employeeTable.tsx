@@ -7,7 +7,7 @@ import {
   TableRow,
 } from "@/components/ui/table/index";
 
-import { EmployeeDTO } from '../../types/employees/employee.dto';
+import { EmployeeDTO } from '@/modules/employee/types/employee.dto';
 import Link from 'next/link';
 
 interface Props {
@@ -54,8 +54,8 @@ const EmployeeTable: React.FC<Props> = ({ employees }) => (
               </TableRow>
             </TableHeader>
             <TableBody className="divide-y divide-gray-100 dark:divide-white/[0.05]">
-              {employees.map(employee => (
-                <TableRow key={employee.id}>
+              {employees.map((employee,index) => (
+                <TableRow key={index}>
                   <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">{employee.name}</TableCell>
                   <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">{employee.email}</TableCell>
                   <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">{employee.phone}</TableCell>

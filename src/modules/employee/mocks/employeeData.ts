@@ -1,4 +1,4 @@
-import { EmployeeDetailDTO } from '../types/employees/employee-detail.dto';
+import { EmployeeDetailDTO } from '@/modules/employee/types/employee-detail.dto';
 
 const employeeData: EmployeeDetailDTO[] = [
   {
