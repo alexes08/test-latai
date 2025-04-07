@@ -13,13 +13,14 @@ export const fetchEmployees = async (): Promise<EmployeeDetailDTO[]> => {
       throw new Error('Network response was not ok');
     }
     const data: FetchUsersResponse = await response.json();
-    const employees = data.results.map((user, index) => ({
-      ...user,
-      name: `${user.name.title} ${user.name.first} ${user.name.last}`,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const employees = data.results.map((employeeData: any, index) => ({
+      ...employeeData,
+      name: `${employeeData.name.title} ${employeeData.name.first} ${employeeData.name.last}`,
       id: index,
-      company: user.id.name,
-      address:  `${user.location.street.name} ${user.location.street.number} ${user.location.city} ${user.location.state} ${user.location.country}`,
-      companyLogo: user.picture.medium
+      company: employeeData.id.name,
+      address:  `${employeeData.location.street.name} ${employeeData.location.street.number} ${employeeData.location.city} ${employeeData.location.state} ${employeeData.location.country}`,
+      companyLogo: employeeData.picture.medium
     }));
     
     return employees;
