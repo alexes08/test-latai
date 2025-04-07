@@ -40,7 +40,7 @@ export default function EmployeeDetailPage() {
               </button>
             </Link>
           </div>
-          <EmployeeDetail employeeDetail={employeeDetail} />
+          <EmployeeDetail employeeDetailItem={employeeDetail} />
         </ComponentCard>
       </div>
     </div>

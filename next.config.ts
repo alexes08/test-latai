@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  images: {
+    domains: ['randomuser.me'],
+  },
 };
 
 export default nextConfig;
